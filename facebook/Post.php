@@ -6,8 +6,8 @@
         <form method="POST" action="#" enctype="multipart/form-data">
 
             <input type="hidden" name="MAX_FILE_SIZE" value="100000">
-            Fichier : <input type="file" name="image">
-            Commentaire : <input type="text" name="commentaire">
+            Fichier : <input type="file" multiple accept="image/*" name="image">
+            Commentaire : <input type="textarea" name="commentaire">
             <input type="submit" name="envoyer" value="Envoyer le fichier">
 
         </form>
@@ -22,6 +22,7 @@ $result = $myPDO->query("INSERT INTO < table name > (col1,col2,col3...col n)
 VALUES (value1,value2,value3…value n)");
 
 
+$date = date('Y-m-d H:i:s');
 $commentaire = filter_input(INPUT_POST,"commentaire",FILTER_SANITIZE_STRING);
 $dossier = 'upload/';
 $fichier = basename($_FILES['image']['name']);
