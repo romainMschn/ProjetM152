@@ -97,6 +97,7 @@ hr {
    background-color:#e9eaed;
    padding-left:0;
    padding-right:0;
+   width: 100%;
 }
 #main .img-circle {
    margin-top:18px;
@@ -104,20 +105,7 @@ hr {
    width:70px;
 }
 
-#sidebar {
-    padding:0px;
-	padding-top:15px;
-}
 
-#sidebar, #sidebar a, #sidebar-footer a {
-    color:#ffffff;
-    background-color:transparent;
-	text-shadow:0 0 2px #000000;
-    padding-left:5px;
-}
-#sidebar .nav li>a:hover {
-    background-color:#393939;
-}
 
 .logo {
   display:block;
@@ -136,12 +124,7 @@ hr {
   text-shadow:0 0 1px;
   border-radius:2px;
 }
-#sidebar-footer {
-  background-color:#444;
-  position:absolute;
-  bottom:5px;
-  padding:5px;
-}
+
 #footer {
   margin-bottom:20px;
 }
@@ -168,9 +151,9 @@ h1,h2,h3 {
     color:#666666;
     text-shadow:0 0 1px rgba(0,0,0,.3);
 }
-.form-control {
+/*.form-control {
 	
-}
+}*/
 
 .panel textarea, .well textarea, textarea.form-control
 {
@@ -261,7 +244,7 @@ small.text-muted {
  * off canvas sidebar
  * --------------------------------------------------
  */
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
   .row-offcanvas {
     position: relative;
     -webkit-transition: all 0.25s ease-out;
@@ -284,4 +267,4 @@ small.text-muted {
   #sidebar, #sidebar a, #sidebar-footer a {
     padding-left:3px;
   }
-}
+}*/
