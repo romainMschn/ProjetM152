@@ -1,10 +1,15 @@
 <pre>
 <?php
-var_dump($_FILES);
+
+require_once 'mysql.php';
+
+$commentaire = filter_input(INPUT_POST, "commentaire", FILTER_SANITIZE_STRING);
+
+$idPost = addPost($commentaire);
 for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
 
      $date = date('Y-m-d H:i:s');
-     $commentaire = filter_input(INPUT_POST, "commentaire", FILTER_SANITIZE_STRING);
+     
      $dossier = 'upload/';
      $fichier = basename($_FILES['image']['tmp_name'][$i]);
      $taille_maxi = 70000000;
@@ -22,6 +27,7 @@ for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
      }else if (move_uploaded_file($_FILES['image']['tmp_name'][$i], $dossier . $fichier)) //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
      {
           echo 'Upload effectué avec succès !';
+          addMedia($extension,$fichier,$idPost);
           //header("Location: index.html");
      } else //Sinon (la fonction renvoie FALSE).
      {
