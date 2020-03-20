@@ -5,7 +5,8 @@ require_once 'mysql.php';
 
 $commentaire = filter_input(INPUT_POST, "commentaire", FILTER_SANITIZE_STRING);
 
-$idPost = addPost($commentaire);
+if($commentaire != ""){
+     $idPost = addPost($commentaire);
 for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
 
      $date = date('Y-m-d H:i:s');
@@ -34,6 +35,10 @@ for ($i = 0; $i < count($_FILES['image']['name']); $i++) {
           echo 'Echec de l\'upload !';
      }
 }
+header('Location: index.php');
+}
+
+
 
 
 ?>
